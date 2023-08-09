@@ -1,37 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import { RouterProvider } from 'react-router-dom';
-import { RecoilRoot } from 'recoil';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import {router} from "./router/router";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { RouterProvider } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { RecoilRoot } from "recoil";
+import { theme } from "./styles/theme";
+import GlobalStyle from "./styles/GlobalStyle";
+import router from "./Router";
 
-const root = ReactDOM.createRoot(
-    document.getElementById('root') as HTMLElement
-);
 const queryClient = new QueryClient({
     defaultOptions: {
         queries: {
+            staleTime: 3600000,
+            cacheTime: 3600000,
+            refetchOnReconnect: false,
             refetchOnWindowFocus: false,
-            staleTime: 1000 * 60 * 10,
-            cacheTime: 1000 * 60 * 10,
         },
     },
 });
-if (process.env.NODE_ENV == 'production') {
-    console.log = function no_console() {};
-    console.warn = function no_console() {};
-}
 
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
     <RecoilRoot>
         <QueryClientProvider client={queryClient}>
-            <RouterProvider router={router} />
+            <ThemeProvider theme={theme}>
+                <GlobalStyle />
+                <RouterProvider router={router} />
+            </ThemeProvider>
+            <ReactQueryDevtools />
         </QueryClientProvider>
     </RecoilRoot>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
