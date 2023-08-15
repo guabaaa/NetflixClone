@@ -7,21 +7,21 @@ import { commonApi } from '../../api';
 import Poster from '../Poster';
 import { Wrapper } from '../../App';
 const Section = styled.div`
-	display: flex;
-	justify-content: center;
-	flex-direction: row;
-	max-width: 2400px;
-	flex-wrap: wrap;
-	@media (max-width: 768px) {
-		justify-content: space-between;
-	}
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  max-width: 2400px;
+  flex-wrap: wrap;
+  @media (max-width: 768px) {
+    justify-content: space-between;
+  }
 `;
 
 const SearchText = styled.p`
-	text-align: center;
-	padding: 80px 0 300px;
-	font-size: 36px;
-	font-weight: bold;
+  text-align: center;
+  padding: 80px 0 300px;
+  font-size: 36px;
+  font-weight: bold;
 `;
 
 export function MoviesSearchResults({ keyword }: { keyword: string | null }) {
