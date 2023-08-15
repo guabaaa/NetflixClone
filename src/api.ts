@@ -1,12 +1,12 @@
 // api key
 import axios from 'axios';
-import { config } from './apikey';
+import { apiKey } from './apikey';
 
-const API_KEY = config.apikey;
+
 const api = axios.create({
     baseURL: 'https://api.themoviedb.org/3/',
     params: {
-        api_key: API_KEY,
+        api_key: apiKey,
         language: 'ko-KR',
     },
 });

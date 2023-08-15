@@ -185,7 +185,7 @@ const Poster = ({
                                     : title}
                             </Title>
                             <YearRatingContainer>
-                                <Year>개봉일 {year}</Year>
+                                <Year>개봉일 : {year}</Year>
                                 <ContentRating>
                                     ⭐<ContentRatingChild>{rating}</ContentRatingChild>
                                 </ContentRating>
@@ -218,7 +218,7 @@ const Poster = ({
                                     : title}
                             </Title>
                             <YearRatingContainer>
-                                <Year>개봉일 {year}</Year>
+                                <Year>개봉일 : {year}</Year>
                                 <ContentRating>
                                     ⭐<ContentRatingChild>{rating}</ContentRatingChild>
                                 </ContentRating>

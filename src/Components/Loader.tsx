@@ -35,7 +35,7 @@ const Loader = () => {
                     src={require('../assets/loading.svg').default}
                     alt='loadingBar'
                 ></img>
-                <Title>Loading...</Title>
+                <Title>Loading</Title>
             </LoadingContainer>
         </Container>
     );
