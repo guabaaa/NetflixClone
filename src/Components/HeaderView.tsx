@@ -19,7 +19,7 @@ const Nav = styled(motion.nav)`
 
 	width: 100%;
 	font-size: 14px;
-	padding: 0px 40px;
+	padding: 0 40px;
 	color: ${(props) => props.theme.white.lighter};
 	z-index: 10;
 `;
@@ -67,7 +67,7 @@ const Item = styled.li<{ active: boolean }>`
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
-		color: inherit;
+        color: inherit;
 	}
 	a:hover {
 		color: ${(props) => props.theme.white.veryDark};
@@ -78,7 +78,7 @@ const ItemActive = styled(motion.span)`
 	position: absolute;
 	width: 100%;
 	height: 3px;
-	bottom: 0px;
+	bottom: 0;
 	left: 0;
 	right: 0;
 	background-color: ${(props) => props.theme.red};
@@ -112,7 +112,7 @@ const SearchWrap = styled.div`
 const Input = styled(motion.input)`
 	transform-origin: right center;
 	position: absolute;
-	right: 0px;
+	right: 0;
 	padding: 5px 10px;
 	padding-left: 50px;
 	color: ${(props) => props.theme.white.lighter};
@@ -154,7 +154,6 @@ const Mask = styled.article`
 	z-index: 1;
 `;
 
-// 로고 Hover시 애니메이션 효과 : pill 효과로 변경
 const logoVariants = {
     normal: {
         fillOpacity: 1,
@@ -165,7 +164,6 @@ const logoVariants = {
     },
 };
 
-// 로고 Pill 효과
 const pathVariants: Variants = {
     start: {
         fill: 'rgba(255,255,255,0.1)',
@@ -181,7 +179,7 @@ const pathVariants: Variants = {
     },
 };
 
-// 검색을 위한 Interface
+// 검색
 interface IForm {
     keyword: string;
 }
