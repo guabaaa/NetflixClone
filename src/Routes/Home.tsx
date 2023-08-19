@@ -176,14 +176,13 @@ const Home = () => {
             if (detail.videos.results.length === 0) {
                 const { data: detail } = await commonApi.detail('movie', 497698);
                 setMovieDetail(detail);
-                //setDefaultVedio(true);
                 return;
             }
 
             setMovieDetail(detail);
             setVideoKey(detail.videos.results[0].key);
         } catch (error) {
-            console.log(error);
+            console.log(error,"errors");
         } finally {
             setLoading(false);
         }

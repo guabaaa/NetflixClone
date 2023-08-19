@@ -4,7 +4,7 @@ const QnAContainer = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 70px 0px;
+	padding: 70px 0;
 	border-top: 8px solid rgb(25, 25, 25);
 	width: 100%;
 	@media (max-width: 768px) {
@@ -21,10 +21,10 @@ const QnAContent = styled.div`
 
 const QnATitle = styled.h1`
 	color: white;
-	font-size: 42px;
+	font-size: 40px;
 	text-align: center;
 	@media (max-width: 768px) {
-		font-size: 27px;
+		font-size: 25px;
 	}
 `;
 
@@ -40,7 +40,7 @@ const QnASubSection = styled.div``;
 const QnASubTitle = styled.div`
 	color: white;
 	background-color: #303030;
-	padding: 28px 0px;
+	padding: 28px 0;
 	padding-left: 20px;
 	padding-right: 20px;
 	font-size: 24px;

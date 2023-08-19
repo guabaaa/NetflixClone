@@ -107,7 +107,6 @@ const MovieView = () => {
         [],
     );
 
-    // 초기 셋팅 리스트;
     const getMovieList = async () => {
         const {
             data: { results: nowPlayingResult },
