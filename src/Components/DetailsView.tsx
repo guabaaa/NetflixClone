@@ -19,7 +19,7 @@ export const OverlayMask = styled(motion.div)`
 	z-index: 90;
 `;
 
-// 박스 영역 클릭시 노출되는 팝업
+// 박스 클릭시 팝업나타남
 export const PopupDetail = styled(motion.div)`
 	position: fixed;
 	width: 70vw;
@@ -43,8 +43,8 @@ export const PopupDetailCover = styled.div<{ bgphoto: string }>`
 	background-size: cover;
 `;
 
-// 팝업 제목 타이틀
-export const PopupDetailTitle = styled.p`
+// 팝업제목 타이틀
+export const PopupTitle = styled.p`
 	color: ${(props) => props.theme.white.lighter};
 	padding: 16px 20px 0;
 	font-size: 46px;
@@ -77,8 +77,8 @@ export const PopupDetailOverview = styled.div`
 	}
 `;
 
-// 팝업 추가 정보 내용
-export const PopupThumbInfo = styled.article`
+// 팝업 추가정보
+export const PopupPlusInfo = styled.article`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -180,24 +180,24 @@ const DetailsView = ({ type, category, id }: IDetailsProps) => {
                             >
                                 {type === 'movie' && (
                                     <>
-                                        <PopupDetailTitle>{data?.title}</PopupDetailTitle>
-                                        <PopupThumbInfo>
+                                        <PopupTitle>{data?.title}</PopupTitle>
+                                        <PopupPlusInfo>
                                             <p>개봉일: {data?.release_date}</p>
                                             <p>⭐️ {data?.vote_average}</p>
-                                        </PopupThumbInfo>
+                                        </PopupPlusInfo>
                                     </>
                                 )}
 
                                 {type === 'tv' && (
                                     <>
-                                        <PopupDetailTitle>{data?.original_name}</PopupDetailTitle>
-                                        <PopupThumbInfo>
+                                        <PopupTitle>{data?.original_name}</PopupTitle>
+                                        <PopupPlusInfo>
                                             <p>
                                                 시작일: {data?.first_air_date} ~ 종료일:
                                                 {data?.last_air_date}
                                             </p>
                                             <p>⭐️ {data?.vote_average}</p>
-                                        </PopupThumbInfo>
+                                        </PopupPlusInfo>
                                     </>
                                 )}
                             </PopupDetailCover>
